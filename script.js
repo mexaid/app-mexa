@@ -8,14 +8,14 @@
 
 //------------------
 let firebaseConfig = {
-  apiKey: "AIzaSyDo1Sp_sRE5bPSLTjHgj5SI30WrphqhKg4",
-  authDomain: "mexa-design.firebaseapp.com",
-  databaseURL: "https://mexa-design-default-rtdb.firebaseio.com",
-  projectId: "mexa-design",
-  storageBucket: "mexa-design.appspot.com",
-  messagingSenderId: "955193718764",
-  appId: "1:955193718764:web:939acd864b7e82a2b3f2c9",
-  measurementId: "G-ELHL0XV0TK" };
+  apiKey: "AIzaSyCFZ86uLRWHUVgnPLMoSYlYasXqwHl6OT8",
+  authDomain: "mexa-app.firebaseapp.com",
+  databaseURL: "https://mexa-app-default-rtdb.firebaseio.com",
+  projectId: "mexa-app",
+  storageBucket: "mexa-app.appspot.com",
+  messagingSenderId: "25205852440",
+  appId: "1:25205852440:web:38be2eadb4b6a71add366d",
+  measurementId: "G-VQ3R8YBJYN" };
 
 
 firebase.initializeApp(firebaseConfig);
