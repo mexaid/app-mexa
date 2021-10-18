@@ -18,7 +18,7 @@ nav{
   width: 100%;
   height: 100%;
   height: 70px;
-  background: #3E8DA8;
+  background: #3F51B5FF;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   z-index: 99;
 }
@@ -82,7 +82,7 @@ nav .navbar .links li .sub-menu{
   top: 70px;
   left: 0;
   line-height: 40px;
-  background: #3E8DA8;
+  background: #3F51B5FF;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 4px 4px;
   display: none;
@@ -141,7 +141,7 @@ nav .navbar .links li:hover .js-sub-menu{
   top: 80px;
   height: 60px;
   width: 300px;
-  background: #3E8DA8;
+  background: #3F51B5FF;
   border-radius: 6px;
   opacity: 0;
   pointer-events: none;
@@ -151,14 +151,14 @@ nav .navbar .links li:hover .js-sub-menu{
   top: 65px;
   opacity: 1;
   pointer-events: auto;
-  background: #3E8DA8;
+  background: #3F51B5FF;
 }
 .search-box .input-box::before{
   content: '';
   position: absolute;
   height: 20px;
   width: 20px;
-  background: #3E8DA8;
+  background: #3F51B5FF;
   right: 10px;
   top: -6px;
   transform: rotate(45deg);
@@ -213,7 +213,7 @@ nav .navbar .links li:hover .js-sub-menu{
     display: block;
     max-width: 270px;
     width: 100%;
-    background:  #3E8DA8;
+    background:  #3F51B5FF;
     line-height: 40px;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
