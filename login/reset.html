@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset | Vudeo</title>
+    <link rel="stylesheet" href="../assets/css/login.css" />
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form id="resetForm" autocomplete="off" class="sign-in-form">
+              <div class="logo">
+                <img src="https://i.ibb.co/jMn39nB/1632482257364.png" alt="easyclass" style="width: 65px; margin-left: -20px"/>
+                <h4>Vudeo</h4>
+              </div>
+
+              <div class="heading">
+                <h3>Reset Password</h3>
+              </div>
+
+               <div class="message-wrapper" id="messageDiv">
+               <h6 class="message"></h6>
+                                </div><br>
+              <div class="actual-form">
+                <div class="input-wrap">
+                    <input
+                    type="email"
+                    minlength="4"
+                    autocomplete="off"
+                    class="input-field"
+                    placeholder="" name="email"
+                    class="input-wrap"/>
+                    <label>Email</label>
+                </div>
+                
+                <button class="sign-btn" type="submit">Reset</button></button>
+
+              </div>
+            </form>
+
+
+<!--Gakpeka-->
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="./img/image1.png" class="image img-1 show" alt="" />
+              <img src="./img/image2.png" class="image img-2" alt="" />
+              <img src="./img/image3.png" class="image img-3" alt="" />
+            </div>
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>Lupa Password?</h2>
+                  <h2>Tulis Email Anda</h2>
+                  <h2>Cek Email Pribadi</h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Javascript file -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="../assets/js/login-2.js"></script>
+
+    <script src="../assets/js/login.js"></script>
+  </body>
+</html>

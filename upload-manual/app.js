@@ -2,14 +2,14 @@
 
 var firebaseConfig = {
 
-    apiKey: "AIzaSyCFZ86uLRWHUVgnPLMoSYlYasXqwHl6OT8",
-      authDomain: "mexa-app.firebaseapp.com",
-      databaseURL: "https://mexa-app-default-rtdb.firebaseio.com",
-      projectId: "mexa-app",
-      storageBucket: "mexa-app.appspot.com",
-      messagingSenderId: "25205852440",
-      appId: "1:25205852440:web:38be2eadb4b6a71add366d",
-      measurementId: "G-VQ3R8YBJYN"
+    apiKey: "AIzaSyAsGWZNuUvCZTzb6UwTRb7BfT3sbrJuTQg",
+    authDomain: "mexa-aplikasi.firebaseapp.com",
+    databaseURL: "https://mexa-aplikasi-default-rtdb.firebaseio.com",
+    projectId: "mexa-aplikasi",
+    storageBucket: "mexa-aplikasi.appspot.com",
+    messagingSenderId: "337510082503",
+    appId: "1:337510082503:web:79436729e844f9d6a75be2",
+    measurementId: "G-ZRH82E69VR",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -24,7 +24,7 @@ var message_value = document.querySelector('.message');
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if(window.location.pathname != '/home.html'){
-            window.location = 'home.html';
+            window.location = '../index.html';
         }
     } else {
         if(window.location.pathname === '/home.html'){
@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-if(window.location.pathname != '/home.html'){
+if(window.location.pathname != '/../index.html'){
     // verification captcha setting 
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
         'size': 'invisible',
@@ -72,7 +72,7 @@ if(window.location.pathname != '/home.html'){
             confirmationResult.confirm(otp_number).then((result) => {
                 // User signed in successfully.
                 const user = result.user;
-                window.location = 'home.html';
+                window.location = '../index.html';
             }).catch((error) => {
                 showErrorMessage(error.message);
             });
