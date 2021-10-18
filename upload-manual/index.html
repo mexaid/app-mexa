@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Firebase Email Authentication</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="main-heading">Sign in</h1>
+        <p class="sub-text">Sign in using your mobile number.</p>
+        <div class="message-wrapper" id="messageDiv">
+            <h6 class="message"></h6>
+        </div>
+        <div class="form-wrapper">
+            <form id="loginForm">
+                <div class="input-field">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="Phone" name="phone">
+                </div>
+                <button class="main-button" type="submit" id="sign-in-button">Sign in</button>
+            </form>
+        </div>
+        <div class="form-wrapper">
+            <form id="otpForm">
+                <div class="input-field">
+                    <label>Enter OTP</label>
+                    <input type="number" placeholder="One time password" name="otp_value">
+                </div>
+                <button class="main-button" type="submit">Verify OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
