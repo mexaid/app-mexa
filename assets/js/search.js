@@ -23,6 +23,8 @@ let firebaseConfig = {
 
 
 firebase.initializeApp(firebaseConfig);
+var message = document.querySelector('#messageDiv');
+var message_value = document.querySelector('.message');
 let presenceRef = firebase.database().ref(".info/connected"),
 usersRef = firebase.database().ref('users'),
 imagesRef = firebase.database().ref('images');

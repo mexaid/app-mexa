@@ -35,14 +35,14 @@
         <ul class="links">
           <li><a href="#">HOME</a></li>
           <li>
-            <a href="#">Design</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <a >Design</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
             <ul class="htmlCss-sub-menu sub-menu">
               <li><a href="#">Ui/Ux</a></li>
               <li><a href="#">Design Website</a></li>
               <!-- More -->
               <li class="more">
-                <span><a href="#">More</a>
+                <span><a>More</a>
                 <i class='bx bxs-chevron-right arrow more-arrow'></i>
               </span>
                <!-- More -->
@@ -67,6 +67,9 @@
           <span v-show="loggedIn" style="color: white;"><i class="fa fa-sign-out" style="color: white;"></i> Log Out</span>
     </span>
           <button @click="toggleAddEditModal('add')" class="addImage" v-show="loggedIn">Add New Image</button>
+          <a href="coming-soon/index.html">
+          <button class="addImage" v-show="loggedIn" style="color: white;">Profil</button>
+          </a>
           <!-- More --
           <li><a href="#">CONTACT US</a></li>
           <!-- More -->
@@ -76,7 +79,8 @@
       <div class="search-box">
         <i class='bx bx-search'></i>
         <div class="input-box">
-          <input v-model="imagesSearchString" placeholder="Cari Gambar Apa?" style="width: 290px;"/>
+          <input v-model="imagesSearchString" type="search" placeholder="Search and press enter ..." aria-label="Search"
+                    class="form-control me-2" style="width: 290px;">
         </div>
       </div>
     </div>
