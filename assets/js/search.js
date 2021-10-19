@@ -6,18 +6,20 @@
 
 
 
+
+
 // Setup Firebase
 
 //------------------
 let firebaseConfig = {
   apiKey: "AIzaSyAsGWZNuUvCZTzb6UwTRb7BfT3sbrJuTQg",
-    authDomain: "mexa-aplikasi.firebaseapp.com",
-    databaseURL: "https://mexa-aplikasi-default-rtdb.firebaseio.com",
-    projectId: "mexa-aplikasi",
-    storageBucket: "mexa-aplikasi.appspot.com",
-    messagingSenderId: "337510082503",
-    appId: "1:337510082503:web:79436729e844f9d6a75be2",
-    measurementId: "G-ZRH82E69VR" };
+  authDomain: "mexa-aplikasi.firebaseapp.com",
+  databaseURL: "https://mexa-aplikasi-default-rtdb.firebaseio.com",
+  projectId: "mexa-aplikasi",
+  storageBucket: "mexa-aplikasi.appspot.com",
+  messagingSenderId: "337510082503",
+  appId: "1:337510082503:web:ae7e1a408ffbfa07a75be2",
+  measurementId: "G-WPC031NNW7" };
 
 
 firebase.initializeApp(firebaseConfig);
@@ -293,8 +295,8 @@ new Vue({
 
       let link = document.createElement('a');
       document.body.appendChild(link);
-      link.href = image.url;
-      link.download = image.url;
+      link.href = image.urlDown;
+      link.download = image.urlDown;
       link.click();
     },
 

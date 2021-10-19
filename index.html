@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 
 <html lang="en" dir="ltr">
@@ -43,7 +47,7 @@
               </span>
                <!-- More -->
                 <ul class="more-sub-menu sub-menu">
-                  <li><a href="upload-manual/index.html" onclick="notifySuccess2()">Segera Hadir</a></li>
+                  <li><a onclick="notifySuccess2()">Segera Hadir</a></li>
                 </ul>
                  <!-- More -->
               </li>
@@ -111,7 +115,7 @@
           <p>
             <span @click.stop="likeImage(image)">{{ image.likes }}&nbsp;&nbsp;<i class="fa fa-thumbs-o-up"></i></span><br>
             <span>{{ image.views }}&nbsp;&nbsp;<i class="fa fa-eye"></i></span><br>
-            <span @click.stop="downloadImage(image)"><a target="_blank" v-bind:href="image.url">{{ image.downloads }}&nbsp;&nbsp;<i class="fa fa-download"></i></a></span><br>
+            <span @click.stop="downloadImage(image)"><a target="_blank" v-bind:href="image.urlDown">{{ image.downloads }}&nbsp;&nbsp;<i class="fa fa-download"></i></a></span><br>
             <span>{{ image.creator }}&nbsp;&nbsp;<i class="fa fa-camera"></i></span><br>
           </p>
         </div>
@@ -128,7 +132,7 @@
       <p class="modalData">
         <span @click.stop="likeImage(imageModalData)"><span class="like">{{ imageModalData.likes }}&nbsp;&nbsp;<i class="fa fa-thumbs-o-up"></i></span></span><br>
         <span>{{ imageModalData.views }}&nbsp;&nbsp;<i class="fa fa-eye"></i></span><br>
-        <span @click.stop="downloadImage(imageModalData)"><a target="_blank" v-bind:href="imageModalData.url">{{ imageModalData.downloads }}&nbsp;&nbsp;<i class="fa fa-download"></i></a></span><br>
+        <span @click.stop="downloadImage(imageModalData)"><a target="_blank" v-bind:href="imageModalData.urlDown">{{ imageModalData.downloads }}&nbsp;&nbsp;<i class="fa fa-download"></i></a></span><br>
         <span>{{ imageModalData.creator }}&nbsp;&nbsp;<i class="fa fa-camera"></i></span><br>
       </p>
     </div>
@@ -143,6 +147,9 @@
       <h2>{{ modalData.modalType }} Image</h2>
       <input placeholder="Image title" v-model="modalData.title" />
       <input placeholder="Image URL {imgbb.com}" v-model="modalData.url" />
+      <!-- Down link --
+      <input placeholder="Download" v-model="modalData.urlDown" />
+      <!-- Down Link -->
       <span v-for="(tag, index) in modalData.tags" class="tags">
         <button v-show="index === 0" class="addTag" @click="addTag(index)"><i class="fa fa-plus"></i></button>
         <input v-model="modalData.tags[index]" v-bind:placeholder="'Tag ' + (index+1)" />
