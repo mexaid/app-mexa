@@ -11,25 +11,6 @@ apiKey: "AIzaSyAsGWZNuUvCZTzb6UwTRb7BfT3sbrJuTQg",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-var provider = new firebase.auth.GoogleAuthProvider();
-        var login = document.querySelector('.login');
-
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // console.log(user);
-            window.location = '../index.html';
-          }
-        });
-
-        login.addEventListener('click', (e) => {
-          firebase.auth()
-            .signInWithPopup(provider)
-            .then((result) => {
-              window.location = '../index.html'
-            }).catch((error) => {
-              console.log(error);
-            });
-        })
 var form = document.querySelector('#loginForm');
 var r_form = document.querySelector('#registerForm');
 var reset_form = document.querySelector('#resetForm');
@@ -114,6 +95,26 @@ if(reset_form){
     })
 }
 
+var provider = new firebase.auth.GoogleAuthProvider();
+var login = document.querySelector('.login');
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // console.log(user);
+    window.location = '../index.html';
+  }
+});
+
+login.addEventListener('click', (e) => {
+  firebase.auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      window.location = '../index.html'
+    }).catch((error) => {
+      console.log(error);
+    });
+})
+
 // sign out  
 if(sign_out){
     sign_out.addEventListener('click', function(e) {
@@ -124,3 +125,4 @@ if(sign_out){
         });
     })
 }
+
