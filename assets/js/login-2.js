@@ -2,14 +2,15 @@
 var firebaseConfig = {
 apiKey: "AIzaSyAsGWZNuUvCZTzb6UwTRb7BfT3sbrJuTQg",
     authDomain: "mexa-aplikasi.firebaseapp.com",
+    databaseURL: "https://mexa-aplikasi-default-rtdb.firebaseio.com",
     projectId: "mexa-aplikasi",
     storageBucket: "mexa-aplikasi.appspot.com",
     messagingSenderId: "337510082503",
     appId: "1:337510082503:web:79436729e844f9d6a75be2",
+    measurementId: "G-ZRH82E69VR",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 var provider = new firebase.auth.GoogleAuthProvider();
         var login = document.querySelector('.login');
 
@@ -29,7 +30,6 @@ var provider = new firebase.auth.GoogleAuthProvider();
               console.log(error);
             });
         })
-        
 var form = document.querySelector('#loginForm');
 var r_form = document.querySelector('#registerForm');
 var reset_form = document.querySelector('#resetForm');
