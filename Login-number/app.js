@@ -20,6 +20,7 @@ var message = document.querySelector('#messageDiv');
 var sign_out = document.querySelector("#signOut");
 var message_value = document.querySelector('.message');
 
+
 // check if user is logged in or not
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
