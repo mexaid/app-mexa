@@ -43,6 +43,18 @@ if(window.location.pathname != '/../index.html'){
     });
     const appVerifier = window.recaptchaVerifier;
     firebase.auth().settings.appVerificationDisabledForTesting = true; // turn this off in production stage
+    
+    // show error message function 
+
+function showErrorMessage(erro_message){
+
+    message.style.display = 'block';
+    message_value.innerText = erro_message;
+    console.log(erro_message);
+    setTimeout(function(){
+        message.style.display = 'none';
+    }, 3000);
+}
 
     // user login
     if(form){
@@ -82,15 +94,6 @@ if(window.location.pathname != '/../index.html'){
 }
 
 
-// show error message function 
-function showErrorMessage(erro_message){
-    message.style.display = 'block';
-    message_value.innerText = erro_message;
-    console.log(erro_message);
-    setTimeout(function(){
-        message.style.display = 'none';
-    }, 3000);
-}
 
 // sign out  
 if(sign_out){
