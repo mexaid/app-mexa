@@ -1,10 +1,23 @@
 <!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <title>Mexa | Search</title>
     <link rel="stylesheet" href="assets/css/search.css">
     <!-- Boxicons CDN Link -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,6 +96,19 @@
   </nav>
   
   <br><br><br>
+  <section class="slider-wrapper">
+    <div class="slider">
+      <img src="https://i.ibb.co/zhvrFX4/instalizer-241709957-564072888172647-4445792038484327114-n.jpg" style="width: 250px;">
+      <img src="https://i.ibb.co/zhvrFX4/instalizer-241709957-564072888172647-4445792038484327114-n.jpg">
+      <img src="https://i.ibb.co/zhvrFX4/instalizer-241709957-564072888172647-4445792038484327114-n.jpg">
+    </div>
+  </section>
+  <br><br>
+  <div class="slider-progress">
+    <div class="progress"></div>
+  </div>
+  
+  <br><br>
   <!-- partial:index.partial.html --
 
       <h1>{{ title }}</h1>
@@ -197,12 +223,157 @@
   </div>
 </div>
 <!-- partial -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
 <script src='https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js'></script>
 <script src='https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.js'></script>
 <script src='https://gstatic.com/firebasejs/3.5.2/firebase.js'></script>
 <script src='https://unpkg.com/vuefire@1.4.1/dist/vuefire.js'></script><script  src="scripts.js"></script>
   <script src="assets/js/search.js"></script>
+ 
+ <script>
+  // To add class on last slide
+function init_class(current, last, class_nm) {
+    if (jQuery('.industries-listing.slick-slider').length) {
+        var currentItem = current;
+        var last_item = last - 1;
+        if (currentItem >= 1 && currentItem != last_item) {
+            class_nm.addClass("init-slide");
+        }
+        if (jQuery(class_nm).find(".slick-slide[data-slick-index='" + last_item + "']").attr('aria-hidden') != 'true') {
+            class_nm.addClass("init-slide-last");
+            class_nm.removeClass("init-slide");
+        } else {
+            // class_nm.removeClass("init-slide");
+            class_nm.removeClass("init-slide-last");
+        }
+    }
+}
+
+
+var $sliderNav = true;
+    function slider_nav(){
+        if ($(".slider.slick-slider").length) {
+            if ($($sliderNav)) {
+                $(".slider.slick-slider").append("<span class='next-slide'></span>");
+                $(".slider.slick-slider").prepend("<span class='previous-slide'></span>");
+                $sliderNav = false;
+            }
+            
+            var dots_width = $(".slider .slick-dots li").outerWidth();
+            var dots_left_position = $(".slider .slick-dots li").first().position().left;
+            var nav_left_position = (dots_left_position - dots_width);
+            var nav_right_position = (dots_left_position - dots_width) - 6; 
+
+            $(".slider .previous-slide").css({left: nav_left_position +'px'});   
+            $(".slider .next-slide").css({right: nav_right_position +'px'});
+
+            $(".slider .next-slide").click(function(){
+                $(this).parents(".slider.slick-slider").slick('slickNext');
+            });
+            $(".slider .previous-slide").click(function(){
+                $(this).parents(".slider.slick-slider").slick('slickPrev');
+            });
+        }
+    }var $sliderNav = true;
+    function slider_nav(){
+        if ($(".slider.slick-slider").length) {
+            if ($($sliderNav)) {
+                $(".slider.slick-slider").append("<span class='next-slide'></span>");
+                $(".slider.slick-slider").prepend("<span class='previous-slide'></span>");
+                $sliderNav = false;
+            }
+            
+            var dots_width = $(".slider .slick-dots li").outerWidth();
+            var dots_left_position = $(".slider .slick-dots li").first().position().left;
+            var nav_left_position = (dots_left_position - dots_width);
+            var nav_right_position = (dots_left_position - dots_width) - 6; 
+
+            $(".slider .previous-slide").css({left: nav_left_position +'px'});   
+            $(".slider .next-slide").css({right: nav_right_position +'px'});
+
+            $(".slider .next-slide").click(function(){
+                $(this).parents(".slider.slick-slider").slick('slickNext');
+            });
+            $(".slider .previous-slide").click(function(){
+                $(this).parents(".slider.slick-slider").slick('slickPrev');
+            });
+        }
+    }
+
+$(function() {
+
+        //for slick slider
+        $('.slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            centerMode: true,
+            arrows: false,
+            autoplay: true,
+        }).on("swipe", function(event) {
+                var currentSlideIndex = jQuery('.industries-listing .slick-current').attr('data-slick-index');
+                var last_item = jQuery('.industries-listing .slick-slide').length;
+                var _currentclass = jQuery(".industries-listing");
+                init_class(currentSlideIndex, last_item, _currentclass);
+            });
+
+        
+
+
+        var time = 2;
+        var $bar,
+            isPause,
+            tick,
+            percentTime;
+
+        $bar = $('.slider-progress .progress');
+
+        function startProgressbar() {
+            resetProgressbar();
+            percentTime = 0;
+            isPause = false;
+            tick = setInterval(interval, 10);
+        }
+
+        function interval() {
+            if ($(".slick-dots .animated-dot").hasClass("play")) {
+                isPause = true;
+            }
+            if (isPause === false) {
+                percentTime += 1 / (time + 0.1);
+                $bar.css({
+                    width: percentTime + "%"
+                });
+                if (percentTime >= 100) {
+                    $(".slider").slick('slickNext');
+                    startProgressbar();
+                }
+            }
+        }
+
+        function resetProgressbar() {
+            $bar.css({
+                width: 0 + '%'
+            });
+            clearTimeout(tick);
+        }
+
+        startProgressbar();
+
+        $(".slider").on("beforeChange", function() {
+            resetProgressbar();
+            startProgressbar();
+            $bar.css({
+                width: 100 + "%"
+            });
+        });
+  
+    slider_nav();
+
+    });
+</script>
 
 </body>
 </html>

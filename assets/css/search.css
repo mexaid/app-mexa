@@ -796,3 +796,74 @@ a:hover, a:active {
 #notification-area .notification.info {
   background:#00acee;
 }
+
+section {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 30vh;
+        margin-top:10px;
+    }
+
+    /* for slick slider */
+    .slider.slick-dotted.slick-slider{
+        max-width: 360px;
+        margin: 0 auto 5px;
+    }
+    .slider div{
+        background: #5e5532;    
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        height: 120%;
+    }
+    .slider .slick-dots{
+        bottom:-75px;
+    }
+    .slider .slick-dots li button:before{
+        color: black;
+        content: '•';
+        background: #fff;
+        border-radius: 50%;
+        font-size: 10px;
+        line-height: 12px;
+        width: 10px;
+        height: 10px;
+    }
+
+    /* progress bar */
+    .slider-progress {
+      width: 100%;
+      height: 3px;
+      background: #eee;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    .slider-progress .progress {
+      width: 0%;
+      height: 3px;
+      background: #000;
+    }
+      
+    /* common slider-nav */
+     .slider .previous-slide, .slider .next-slide{
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        top: auto;
+        bottom: -70px;
+        left: auto;
+        right: auto;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .slider .previous-slide{
+        background: url("https://img.icons8.com/office/16/000000/back.png") no-repeat;
+        background-size: contain;
+    }
+    .slider .next-slide{
+        background: url("https://img.icons8.com/office/16/000000/forward.png") no-repeat;
+        background-size: contain;
+        background-position: right;
+    }
